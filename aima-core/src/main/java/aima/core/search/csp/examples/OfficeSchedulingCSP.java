@@ -7,9 +7,9 @@ import aima.core.search.csp.Variable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OfficeSchedulingCSP extends CSP<Variable, Integer> {
+public class OfficeSchedulingCSP extends CSP<Variable, List<Integer>> {
 
-	public OfficeSchedulingCSP(int size) {
+	public OfficeSchedulingCSP() {
 		addVariable(new Variable("Alice"));
 		addVariable(new Variable("Bob"));
 		addVariable(new Variable("Charlie"));
@@ -17,76 +17,45 @@ public class OfficeSchedulingCSP extends CSP<Variable, Integer> {
 		addVariable(new Variable("Eve"));
 		
 		//Alice
-		List<Integer> values_A = new ArrayList<>();
-		values_A.add(4);
-		values_A.add(13);
-		values_A.add(19);
-		values_A.add(21);
-		values_A.add(22);
-		Domain<Integer> availability_A = new Domain<>(values_A);
-		for (Variable var : getVariables())
-			setDomain(var, availability_A);
+		List<List<Integer>> values_A = new ArrayList<>();
+		int horarios_A[] = {4,13,19,21,22};
+		values_A = Permuta.permuta(horarios_A, 2);
+		Domain<List<Integer>> availability_A = new Domain<>(values_A);
+		Variable alice = getVariables().get(0);
+		setDomain(alice, availability_A);
 		
 		//Bob
-		List<Integer> values_B = new ArrayList<>();
-		values_B.add(6);
-		values_B.add(9);
-		values_B.add(10);
-		values_B.add(14);
-		values_B.add(15);
-		values_B.add(21);
-		Domain<Integer> availability_B = new Domain<>(values_B);
-		
-		for (Variable var : getVariables())
-			setDomain(var, availability_B);
+		List<List<Integer>> values_B = new ArrayList<>();
+		int horarios_B[] = {6,9,10,14,15,21};
+		values_B = Permuta.permuta(horarios_B, 3);
+		Domain<List<Integer>> availability_B = new Domain<>(values_B);
+		Variable bob = getVariables().get(1);
+		setDomain(bob, availability_B);
 		
 		//Charlie
-		List<Integer> values_C = new ArrayList<>();
-		values_C.add(5);
-		values_C.add(8);
-		values_C.add(10);
-		values_C.add(13);
-		values_C.add(14);
-		values_C.add(21);
-		values_C.add(22);
-		values_C.add(23);
-		Domain<Integer> availability_C = new Domain<>(values_C);
-		
-		for (Variable var : getVariables())
-			setDomain(var, availability_C);
+		List<List<Integer>> values_C = new ArrayList<>();
+		int horarios_C[] = {5,8,10,13,14,21,22,23};
+		values_C = Permuta.permuta(horarios_C, 1);
+		Domain<List<Integer>> availability_C = new Domain<>(values_C);
+		Variable charlie = getVariables().get(2);
+		setDomain(charlie, availability_C);
 		
 		//David
-		List<Integer> values_D = new ArrayList<>();
-		values_D.add(1);
-		values_D.add(3);
-		values_D.add(4);
-		values_D.add(5);
-		values_D.add(6);
-		values_D.add(7);
-		values_D.add(19);
-		values_D.add(23);
-		Domain<Integer> availability_D = new Domain<>(values_D);
-		
-		for (Variable var : getVariables())
-			setDomain(var, availability_D);
+		List<List<Integer>> values_D = new ArrayList<>();
+		int horarios_D[] = {1,3,4,5,6,7,19,23};
+		values_D = Permuta.permuta(horarios_D, 2);
+		Domain<List<Integer>> availability_D = new Domain<>(values_D);
+		Variable david = getVariables().get(3);
+		setDomain(david, availability_D);
 		
 		//Eve
-		List<Integer> values_E = new ArrayList<>();
-		values_E.add(2);
-		values_E.add(4);
-		values_E.add(7);
-		values_E.add(10);
-		values_E.add(11);
-		values_E.add(13);
-		values_E.add(14);
-		values_E.add(15);
-		values_E.add(18);
-		values_E.add(21);
-		Domain<Integer> availability_E = new Domain<>(values_E);
+		List<List<Integer>> values_E = new ArrayList<>();
+		int horarios_E[] = {2,4,7,10,11,13,14,15,18,21};
+		values_E = Permuta.permuta(horarios_E, 4);
+		Domain<List<Integer>> availability_E = new Domain<>(values_E);
+		Variable eve = getVariables().get(4);
+		setDomain(eve, availability_E);
 		
-		for (Variable var : getVariables())
-			setDomain(var, availability_E);
-
 		// arrumar as restrições
 //		for (int i = 0; i < size; i++) {
 //			Variable var1 = getVariables().get(i);
