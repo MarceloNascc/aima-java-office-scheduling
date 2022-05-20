@@ -10,8 +10,11 @@ import java.util.List;
 public class NQueensCSP extends CSP<Variable, Integer> {
 
 	public NQueensCSP(int size) {
-		for (int i = 0; i < size; i++)
-			addVariable(new Variable("Q" + (i+1)));
+		addVariable(new Variable("Alice"));
+		addVariable(new Variable("Bob"));
+		addVariable(new Variable("Charlie"));
+		addVariable(new Variable("David"));
+		addVariable(new Variable("Eve"));
 		
 		List<Integer> values = new ArrayList<>();
 		for (int val = 1; val <= size; val++)
