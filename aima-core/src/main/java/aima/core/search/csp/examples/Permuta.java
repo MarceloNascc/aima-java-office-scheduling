@@ -26,7 +26,6 @@ public class Permuta {
 					values.get(cont).addAll(Arrays.asList(vetor[i],vetor[j]));
 					cont++;
 				}
-				System.out.println("\n");
 			}
 		}
 		else if (qntd == 3) {
