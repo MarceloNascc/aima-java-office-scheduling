@@ -37,11 +37,13 @@ public class NotIncludeSameValueConstraint implements Constraint<Variable, List<
 		
 		Boolean isSatisfied = true;
 		
-		for (Integer assignedValue : value1) {
-			if (value2.contains(assignedValue)) {
-				isSatisfied = false;
-				
-				break;
+		if(value1 != null) {
+			for (Integer assignedValue : value1) {
+				if (value2 != null && value2.contains(assignedValue)) {
+					isSatisfied = false;
+
+					break;
+				}
 			}
 		}
 		
