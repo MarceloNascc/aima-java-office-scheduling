@@ -31,7 +31,7 @@ public class OfficeSchedulingHourRestrictionCspDemo {
 		}
 		System.out.println(stepCounter.getResults() + "\n");
 		
-		System.out.println("The Office scheduling problem | Hour Restriction - (Backtracking + MRV & DEG + LCV + AC3)");
+		/*System.out.println("The Office scheduling problem | Hour Restriction - (Backtracking + MRV & DEG + LCV + AC3)");
 		csp = new OfficeSchedulingHourRestrictionCSP(6 , 18);
 		solver = new FlexibleBacktrackingSolver<Variable, List<Integer>>().setAll();
 		solver.addCspListener(stepCounter);
@@ -57,6 +57,6 @@ public class OfficeSchedulingHourRestrictionCspDemo {
 		}else {
 			System.out.println("This problem has not a solution");
 		}
-		System.out.println(stepCounter.getResults() + "\n");
+		System.out.println(stepCounter.getResults() + "\n");*/
 	}
 }
