@@ -18,7 +18,7 @@ public class OfficeSchedulingCspDemo {
 		CspSolver<Variable, List<Integer>> solver;
 		Optional<Assignment<Variable, List<Integer>>> solution;
 		
-		/*System.out.println("The Office scheduling problem - (Min-Conflicts)");
+		System.out.println("The Office scheduling problem - (Min-Conflicts)");
 		solver = new MinConflictsSolver<>(1000);
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
@@ -43,7 +43,7 @@ public class OfficeSchedulingCspDemo {
 		}else {
 			System.out.println("This problem has not a solution");
 		}
-		System.out.println(stepCounter.getResults() + "\n");*/
+		System.out.println(stepCounter.getResults() + "\n");
 
 		System.out.println("The Office scheduling problem - (Backtracking)");
 		csp = new OfficeSchedulingCSP();
